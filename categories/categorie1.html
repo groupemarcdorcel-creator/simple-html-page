@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégorie 1 - Liste de produits</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Styles personnalisés */
+        .product-card {
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header responsive avec navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">MonSite</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../categories/categorie1.html">Catégories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../blog/index.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal de la page catégorie -->
+    <main class="container my-5">
+        <!-- En-tête de la catégorie -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-4">Catégorie 1 - Électronique</h1>
+                <p class="lead text-muted">Découvrez notre sélection de produits électroniques de qualité</p>
+                <hr>
+            </div>
+        </div>
+
+        <!-- Grille de produits responsive -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Produit 1 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <!-- Image placeholder -->
+                    <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Produit+1" class="card-img-top" alt="Produit 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphone Premium</h5>
+                        <p class="card-text">Un smartphone haut de gamme avec les dernières technologies.</p>
+                        <p class="fw-bold text-primary">599,99 €</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="../produits/produit1.html" class="btn btn-primary w-100">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="https://via.placeholder.com/400x300/28a745/ffffff?text=Produit+2" class="card-img-top" alt="Produit 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Tablette Pro</h5>
+                        <p class="card-text">Tablette performante pour le travail et les loisirs.</p>
+                        <p class="fw-bold text-primary">399,99 €</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="../produits/produit1.html" class="btn btn-primary w-100">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="https://via.placeholder.com/400x300/dc3545/ffffff?text=Produit+3" class="card-img-top" alt="Produit 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Casque Audio</h5>
+                        <p class="card-text">Casque sans fil avec réduction de bruit active.</p>
+                        <p class="fw-bold text-primary">199,99 €</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="../produits/produit1.html" class="btn btn-primary w-100">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="https://via.placeholder.com/400x300/ffc107/333333?text=Produit+4" class="card-img-top" alt="Produit 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Montre Connectée</h5>
+                        <p class="card-text">Suivez votre santé et restez connecté avec style.</p>
+                        <p class="fw-bold text-primary">249,99 €</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="../produits/produit1.html" class="btn btn-primary w-100">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="https://via.placeholder.com/400x300/17a2b8/ffffff?text=Produit+5" class="card-img-top" alt="Produit 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Enceinte Bluetooth</h5>
+                        <p class="card-text">Son puissant et design élégant pour tous vos événements.</p>
+                        <p class="fw-bold text-primary">149,99 €</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="../produits/produit1.html" class="btn btn-primary w-100">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 6 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="https://via.placeholder.com/400x300/6f42c1/ffffff?text=Produit+6" class="card-img-top" alt="Produit 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Clavier Mécanique</h5>
+                        <p class="card-text">Clavier gaming RGB avec switches personnalisables.</p>
+                        <p class="fw-bold text-primary">129,99 €</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="../produits/produit1.html" class="btn btn-primary w-100">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer responsive -->
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <!-- Colonne 1 : À propos -->
+                <div class="col-md-4 mb-3">
+                    <h5>À propos</h5>
+                    <p>MonSite est votre destination pour les meilleurs produits électroniques.</p>
+                </div>
+                <!-- Colonne 2 : Liens rapides -->
+                <div class="col-md-4 mb-3">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Accueil</a></li>
+                        <li><a href="../categories/categorie1.html" class="text-white text-decoration-none">Catégories</a></li>
+                        <li><a href="../blog/index.html" class="text-white text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Colonne 3 : Contact -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contact</h5>
+                    <p>Email: contact@monsite.fr<br>Tél: +33 1 23 45 67 89</p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 MonSite. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
