@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog - Récapitulatif des articles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">Mon Site</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/blog/index.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="/categories.html">Catégories</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-5 bg-light border-bottom">
+      <div class="container">
+        <h1 class="display-5 fw-bold">Blog</h1>
+        <p class="lead mb-0">Récapitulatif des derniers articles</p>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <div class="row g-4">
+        <!-- Article 1 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Découvrir Bootstrap 5 en 10 minutes</h2>
+              <p class="text-muted mb-2">par Alice Martin — 21 oct. 2025</p>
+              <p class="card-text">Un tour d'horizon rapide des composants essentiels de Bootstrap 5 pour démarrer vos projets front-end.</p>
+              <a class="stretched-link" href="./article1.html">Lire l’article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Guide pratique: structurer une page HTML</h2>
+              <p class="text-muted mb-2">par Jean Dupont — 18 oct. 2025</p>
+              <p class="card-text">Les balises clés et les bonnes pratiques pour une structure claire, accessible et maintenable.</p>
+              <a class="stretched-link" href="#">Lire l’article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Optimiser les performances d’un site statique</h2>
+              <p class="text-muted mb-2">par Zoé Bernard — 12 oct. 2025</p>
+              <p class="card-text">Images, CSS, JS : découvrez des astuces simples pour accélérer l’affichage de vos pages.</p>
+              <a class="stretched-link" href="#">Lire l’article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Comprendre le SEO de base</h2>
+              <p class="text-muted mb-2">par Marc Petit — 5 oct. 2025</p>
+              <p class="card-text">Les fondamentaux du référencement naturel pour améliorer la visibilité de votre site.</p>
+              <a class="stretched-link" href="#">Lire l’article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Accessibilité web: par où commencer ?</h2>
+              <p class="text-muted mb-2">par Samir Lopez — 28 sept. 2025</p>
+              <p class="card-text">Quelques étapes concrètes pour rendre vos contenus plus accessibles à tous.</p>
+              <a class="stretched-link" href="#">Lire l’article</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Déployer une page statique sur GitHub Pages</h2>
+              <p class="text-muted mb-2">par Lina Moreau — 15 sept. 2025</p>
+              <p class="card-text">Pas à pas pour publier rapidement un site statique gratuit avec GitHub Pages.</p>
+              <a class="stretched-link" href="#">Lire l’article</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination simple -->
+      <nav class="mt-5" aria-label="Pagination du blog">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><span class="page-link">Précédent</span></li>
+          <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+        </ul>
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-auto">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div>
+            <strong>Mon Site</strong> · © 2025 — Tous droits réservés
+          </div>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link px-2 text-light" href="/index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-light" href="/categories.html">Catégories</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-light" href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
