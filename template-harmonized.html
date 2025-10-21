@@ -4,259 +4,321 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Template Harmonisé - Boutique E-commerce</title>
-  
-  <!-- Lien vers la feuille de style globale harmonisée -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
-  <!-- ========== HEADER ========== -->
-  <header>
-    <nav>
-      <div class="container">
-        <a href="/" class="nav-brand">Boutique</a>
-        <ul class="nav-links">
-          <li><a href="/" class="nav-link active">Accueil</a></li>
-          <li><a href="/categories/categorie1.html" class="nav-link">Catégories</a></li>
-          <li><a href="/produits/produit1.html" class="nav-link">Produits</a></li>
-          <li><a href="/blog/" class="nav-link">Blog</a></li>
+
+  <!--
+    ========== BLOCS HARMONISÉS (COPIER/COLLER ENTRE PAGES) ==========
+    - Header/Nav: identique sur toutes les pages
+    - Breadcrumb (fil d’Ariane): structure identique, contenu dynamique selon la page
+    - Footer: identique sur toutes les pages
+
+    Bonnes pratiques d’accessibilité et d’uniformité:
+    - Utiliser les mêmes classes et la même hiérarchie HTML
+    - Ne changer que le contenu textuel et les URLs nécessaires
+    - Conserver les rôles ARIA et labels pour les lecteurs d’écran
+  -->
+
+  <!-- ========== HEADER / NAV (BLOC GLOBAL) ========== -->
+  <!--
+    BLOC: HEADER/NAV
+    - Rôle: navigation principale du site
+    - ARIA: role="navigation" + aria-label pour les lecteurs d’écran
+    - Réutiliser tel quel dans toutes les pages
+  -->
+  <header class="site-header">
+    <nav class="site-nav" role="navigation" aria-label="Navigation principale">
+      <div class="container nav-container">
+        <a class="nav-brand" href="/">Boutique</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a class="nav-link" href="/">Accueil</a></li>
+          <li><a class="nav-link" href="/categories/">Catégories</a></li>
+          <li><a class="nav-link" href="/produits/">Produits</a></li>
+          <li><a class="nav-link" href="/blog/">Blog</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <!-- ========== CONTENU PRINCIPAL ========== -->
-  <main>
-    
-    <!-- Section Hero -->
-    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, #2563eb 100%); color: white; text-align: center; padding: 4rem 0;">
-      <div class="container">
-        <h1 style="color: white;">Bienvenue dans notre Boutique</h1>
-        <p style="font-size: 1.25rem; margin-bottom: 2rem;">Découvrez notre sélection de produits de qualité</p>
-        <a href="#produits" class="btn btn-secondary">Découvrir nos produits</a>
+  <!-- ========== BREADCRUMB (BLOC GLOBAL) ========== -->
+  <!--
+    BLOC: FIL D’ARIANE
+    - Rôle: situer l’utilisateur dans l’arborescence du site
+    - ARIA: nav[aria-label="Fil d’Ariane"] + ol[aria-label]
+    - Réutiliser la structure, adapter seulement les items et URLs
+  -->
+  <nav class="breadcrumb" aria-label="Fil d’Ariane">
+    <ol class="breadcrumb-list">
+      <li><a href="/">Accueil</a></li>
+      <!-- Insérer ici les niveaux: Catégorie, Produit, etc. selon la page -->
+    </ol>
+  </nav>
+
+  <!-- ========== TEMPLATES DE PAGES ========== -->
+  <!--
+    Trois templates : Home, Catégorie, Produit.
+    Activez un template en conservant sa section <main> et en supprimant les autres
+    dans la page cible (ou en dupliquant ce fichier puis en gardant la section voulue).
+  -->
+
+  <!-- ===== TEMPLATE: HOME ===== -->
+  <!--
+    Sections recommandées:
+    - Hero (accroche)
+    - Grille de produits en avant
+    - Grille de catégories
+    - Derniers articles (optionnel)
+  -->
+  <main id="home-template">
+    <!-- HERO -->
+    <section class="section hero" style="background: linear-gradient(135deg, var(--color-primary) 0%, #2563eb 100%); color: #fff;">
+      <div class="container text-center">
+        <h1>Bienvenue dans notre Boutique</h1>
+        <p class="lead">Découvrez notre sélection de produits de qualité</p>
+        <a class="btn btn-secondary" href="#produits">Découvrir nos produits</a>
       </div>
     </section>
 
-    <!-- Section Produits -->
-    <section class="section" id="produits">
+    <!-- PRODUITS EN VEDETTE -->
+    <section id="produits" class="section">
       <div class="container">
-        <h2 class="text-center mb-md">Nos Produits en Vedette</h2>
-        <p class="text-center text-muted mb-lg">Une sélection soignée pour vous</p>
-        
-        <!-- Grille de produits harmonisiée -->
-        <div class="products-grid">
-          
-          <!-- Produit 1 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=Sneakers+Alpha" class="card-image" alt="Sneakers Alpha">
+        <h2 class="section-title text-center">Nos Produits en Vedette</h2>
+        <p class="text-center text-muted">Une sélection soignée pour vous</p>
+        <div class="grid products-grid">
+          <!--
+            Carte produit harmonisée (réutilisable):
+            - .card .card-image .card-content .card-title .card-text .product-price .card-footer
+            - Remplacer uniquement les contenus/URLs
+          -->
+          <article class="card product-card">
+            <img class="card-image" src="/assets/img/sneakers-alpha.jpg" alt="Sneakers Alpha" loading="lazy">
             <div class="card-content">
               <span class="badge badge-new">Nouveau</span>
               <h3 class="card-title">Sneakers Alpha</h3>
               <p class="card-text">Chaussures confortables et élégantes pour le quotidien</p>
               <div class="product-price">
-                69,90 €
+                <strong>69,90 €</strong>
                 <span class="product-price-old">89,90 €</span>
               </div>
               <div class="card-footer">
-                <button class="btn btn-primary">Ajouter au panier</button>
+                <button class="btn btn-primary" type="button">Ajouter au panier</button>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Produit 2 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=Sac+Minimal" class="card-image" alt="Sac Minimal">
+          <article class="card product-card">
+            <img class="card-image" src="/assets/img/sac-minimal.jpg" alt="Sac Minimal" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Sac Minimal</h3>
               <p class="card-text">Sac à dos minimaliste noir, parfait pour le travail</p>
-              <div class="product-price">49,90 €</div>
+              <div class="product-price"><strong>49,90 €</strong></div>
               <div class="card-footer">
-                <button class="btn btn-primary">Ajouter au panier</button>
+                <button class="btn btn-primary" type="button">Ajouter au panier</button>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Produit 3 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=Montre+Acier" class="card-image" alt="Montre Acier">
+          <article class="card product-card">
+            <img class="card-image" src="/assets/img/montre-acier.jpg" alt="Montre Acier" loading="lazy">
             <div class="card-content">
               <span class="badge badge-sale">-20%</span>
               <h3 class="card-title">Montre Acier</h3>
               <p class="card-text">Montre en acier inoxydable, design élégant</p>
-              <div class="product-price">129,00 €</div>
+              <div class="product-price"><strong>129,00 €</strong></div>
               <div class="card-footer">
-                <button class="btn btn-primary">Ajouter au panier</button>
+                <button class="btn btn-primary" type="button">Ajouter au panier</button>
               </div>
             </div>
-          </div>
-
-          <!-- Produit 4 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/1e3a8a/ffffff?text=Casquette+Navy" class="card-image" alt="Casquette Navy">
-            <div class="card-content">
-              <h3 class="card-title">Casquette Navy</h3>
-              <p class="card-text">Casquette bleue marine, idéale pour l'été</p>
-              <div class="product-price">19,90 €</div>
-              <div class="card-footer">
-                <button class="btn btn-primary">Ajouter au panier</button>
-              </div>
-            </div>
-          </div>
-
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Section Catégories -->
-    <section class="section" style="background-color: var(--color-white);">
+    <!-- CATEGORIES -->
+    <section class="section">
       <div class="container">
-        <h2 class="text-center mb-md">Explorez nos Catégories</h2>
-        
-        <div class="categories-grid">
-          
-          <!-- Catégorie 1 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/f97316/ffffff?text=Électronique" class="card-image" alt="Électronique">
+        <h2 class="section-title text-center">Explorez nos Catégories</h2>
+        <div class="grid categories-grid">
+          <article class="card category-card">
+            <img class="card-image" src="/assets/img/cat-electronique.jpg" alt="Électronique" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Électronique</h3>
               <p class="card-text">Découvrez nos appareils électroniques</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline">Voir la catégorie</a>
-              </div>
+              <div class="card-footer"><a class="btn btn-outline" href="/categories/electronique.html">Voir la catégorie</a></div>
             </div>
-          </div>
+          </article>
 
-          <!-- Catégorie 2 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/f97316/ffffff?text=Mode" class="card-image" alt="Mode">
+          <article class="card category-card">
+            <img class="card-image" src="/assets/img/cat-mode.jpg" alt="Mode" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Mode</h3>
               <p class="card-text">Vêtements et accessoires tendance</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline">Voir la catégorie</a>
-              </div>
+              <div class="card-footer"><a class="btn btn-outline" href="/categories/mode.html">Voir la catégorie</a></div>
             </div>
-          </div>
+          </article>
 
-          <!-- Catégorie 3 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/f97316/ffffff?text=Maison" class="card-image" alt="Maison">
+          <article class="card category-card">
+            <img class="card-image" src="/assets/img/cat-maison.jpg" alt="Maison" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Maison</h3>
               <p class="card-text">Décoration et aménagement</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline">Voir la catégorie</a>
-              </div>
+              <div class="card-footer"><a class="btn btn-outline" href="/categories/maison.html">Voir la catégorie</a></div>
             </div>
-          </div>
-
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Section Blog -->
+    <!-- BLOG (OPTIONNEL) -->
     <section class="section">
       <div class="container">
-        <h2 class="text-center mb-md">Nos Derniers Articles</h2>
-        <p class="text-center text-muted mb-lg">Conseils et tendances</p>
-        
-        <div class="blog-grid">
-          
-          <!-- Article 1 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/64748b/ffffff?text=Article+Blog" class="card-image" alt="Article de blog">
+        <h2 class="section-title text-center">Nos Derniers Articles</h2>
+        <div class="grid blog-grid">
+          <article class="card blog-card">
+            <img class="card-image" src="/assets/img/blog1.jpg" alt="Article de blog" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Les tendances mode 2025</h3>
               <p class="card-text">Découvrez les tendances qui vont marquer l'année</p>
-              <p class="text-muted" style="font-size: 0.875rem;">21 octobre 2025</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-secondary">Lire l'article</a>
-              </div>
+              <p class="text-muted small">21 octobre 2025</p>
+              <div class="card-footer"><a class="btn btn-secondary" href="/blog/tendances-2025.html">Lire l'article</a></div>
             </div>
-          </div>
-
-          <!-- Article 2 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/64748b/ffffff?text=Article+Blog" class="card-image" alt="Article de blog">
+          </article>
+          <article class="card blog-card">
+            <img class="card-image" src="/assets/img/blog2.jpg" alt="Article de blog" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Comment choisir ses sneakers</h3>
               <p class="card-text">Guide complet pour trouver la paire parfaite</p>
-              <p class="text-muted" style="font-size: 0.875rem;">18 octobre 2025</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-secondary">Lire l'article</a>
-              </div>
+              <p class="text-muted small">18 octobre 2025</p>
+              <div class="card-footer"><a class="btn btn-secondary" href="/blog/choisir-sneakers.html">Lire l'article</a></div>
             </div>
-          </div>
-
-          <!-- Article 3 -->
-          <div class="card">
-            <img src="https://via.placeholder.com/400x300/64748b/ffffff?text=Article+Blog" class="card-image" alt="Article de blog">
+          </article>
+          <article class="card blog-card">
+            <img class="card-image" src="/assets/img/blog3.jpg" alt="Article de blog" loading="lazy">
             <div class="card-content">
               <h3 class="card-title">Accessoires essentiels</h3>
               <p class="card-text">Les must-have pour compléter votre style</p>
-              <p class="text-muted" style="font-size: 0.875rem;">15 octobre 2025</p>
-              <div class="card-footer">
-                <a href="#" class="btn btn-secondary">Lire l'article</a>
-              </div>
+              <p class="text-muted small">15 octobre 2025</p>
+              <div class="card-footer"><a class="btn btn-secondary" href="/blog/accessoires-essentiels.html">Lire l'article</a></div>
             </div>
-          </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- ===== TEMPLATE: CATEGORIE ===== -->
+  <!--
+    Utilisation:
+    - Mettre à jour le breadcrumb: Accueil > Catégories > Nom Catégorie
+    - Titre H1 = Nom de la catégorie
+    - Grille de produits réutilisant les mêmes cartes .product-card
+  -->
+  <main id="category-template" hidden>
+    <section class="section page-header">
+      <div class="container">
+        <h1>Nom de la catégorie</h1>
+        <p class="text-muted">Découvrez tous nos produits dans cette catégorie</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="toolbar">
+          <div class="filters">
+            <label for="tri">Trier par</label>
+            <select id="tri" class="select">
+              <option value="pop">Popularité</option>
+              <option value="prix-asc">Prix croissant</option>
+              <option value="prix-desc">Prix décroissant</option>
+              <option value="nouveaux">Nouveautés</option>
+            </select>
+          </div>
+          <div class="results-count">24 produits</div>
+        </div>
+
+        <div class="grid products-grid">
+          <!-- Réutiliser la même carte produit -->
+          <article class="card product-card">
+            <img class="card-image" src="/assets/img/produit.jpg" alt="Nom du produit" loading="lazy">
+            <div class="card-content">
+              <h3 class="card-title">Nom du produit</h3>
+              <p class="card-text">Courte description du produit</p>
+              <div class="product-price"><strong>59,00 €</strong></div>
+              <div class="card-footer"><button class="btn btn-primary" type="button">Ajouter au panier</button></div>
+            </div>
+          </article>
+          <!-- Dupliquer autant que nécessaire -->
+        </div>
+
+        <nav class="pagination" aria-label="Pagination produits">
+          <a class="page-link prev" href="#" aria-label="Page précédente">«</a>
+          <a class="page-link is-active" href="#">1</a>
+          <a class="page-link" href="#">2</a>
+          <a class="page-link" href="#">3</a>
+          <a class="page-link next" href="#" aria-label="Page suivante">»</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== TEMPLATE: PRODUIT ===== -->
+  <!--
+    Utilisation:
+    - Mettre à jour le breadcrumb: Accueil > Catégories > Nom Catégorie > Nom Produit
+    - Titre H1 = Nom du produit
+    - Détails: galerie, prix, CTA, informations
+  -->
+  <main id="product-template" hidden>
+    <section class="section product-hero">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <img src="/assets/img/produit-hero.jpg" alt="Nom du produit" class="product-image" loading="eager">
+          <div class="thumbs">
+            <img src="/assets/img/produit-1.jpg" alt="Vue 1" loading="lazy">
+            <img src="/assets/img/produit-2.jpg" alt="Vue 2" loading="lazy">
+            <img src="/assets/img/produit-3.jpg" alt="Vue 3" loading="lazy">
+          </div>
+        </div>
+        <div class="product-info">
+          <h1>Nom du produit</h1>
+          <p class="product-sku text-muted">SKU: ABC-123</p>
+          <div class="product-price product-price-lg">
+            <strong>129,00 €</strong>
+            <span class="product-price-old">149,00 €</span>
+          </div>
+          <p class="product-shortdesc">Description courte et arguments clés du produit.</p>
+          <form class="buy-box" aria-label="Ajouter au panier">
+            <label for="qty">Quantité</label>
+            <input id="qty" type="number" min="1" value="1" class="input qty-input">
+            <button class="btn btn-primary" type="submit">Ajouter au panier</button>
+            <button class="btn btn-outline" type="button">Ajouter à la liste</button>
+          </form>
+
+          <ul class="product-highlights">
+            <li>Point fort 1</li>
+            <li>Point fort 2</li>
+            <li>Point fort 3</li>
+          </ul>
         </div>
       </div>
     </section>
 
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        
-        <!-- Colonne 1 -->
-        <div>
-          <h3>À propos</h3>
-          <p>Boutique e-commerce offrant une sélection de produits de qualité avec un design moderne et élégant.</p>
+    <section class="section product-details">
+      <div class="container">
+        <div class="tabs" role="tablist" aria-label="Informations produit">
+          <button role="tab" aria-selected="true" aria-controls="tab-description" id="tab-description-btn">Description</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-specs" id="tab-specs-btn">Caractéristiques</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-delivery" id="tab-delivery-btn">Livraison & Retours</button>
         </div>
-
-        <!-- Colonne 2 -->
-        <div>
-          <h3>Liens rapides</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 0.5rem;"><a href="#">Accueil</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="#">Produits</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="#">Catégories</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="#">Blog</a></li>
+        <div id="tab-description" role="tabpanel" aria-labelledby="tab-description-btn">
+          <p>Texte de description détaillée du produit.</p>
+        </div>
+        <div id="tab-specs" role="tabpanel" aria-labelledby="tab-specs-btn" hidden>
+          <ul>
+            <li>Matière: Coton</li>
+            <li>Taille: Unique</li>
+            <li>Origine: UE</li>
           </ul>
         </div>
-
-        <!-- Colonne 3 -->
-        <div>
-          <h3>Informations</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 0.5rem;"><a href="#">Mentions légales</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="#">CGV</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="#">Contact</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="#">Livraison</a></li>
-          </ul>
-        </div>
-
-        <!-- Colonne 4 -->
-        <div>
-          <h3>Newsletter</h3>
-          <p>Inscrivez-vous pour recevoir nos offres</p>
-          <form style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-            <input type="email" placeholder="Votre email" style="flex: 1;">
-            <button class="btn btn-secondary" type="submit">S'inscrire</button>
-          </form>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 Boutique E-commerce. Tous droits réservés. | Design harmonisé avec styles.css</p>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
