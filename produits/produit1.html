@@ -1,149 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produit 1 - Fiche détaillée</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    .price { font-size: 1.5rem; }
-    .badge-status { font-size: .9rem; }
-    .thumb { cursor: pointer; border: 2px solid transparent; }
-    .thumb.active { border-color: #0d6efd; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produit 1 - Ma Boutique</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="../index.html">MonSite</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="../categories/categorie1.html">Catégories</a></li>
-            <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+  <!-- Header avec navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Ma Boutique</a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">Catégories</a>
+              <ul class="dropdown-menu">
+                <li><a href="/categories/categorie1.html" class="dropdown-link">Catégorie 1</a></li>
+                <li><a href="/categories/categorie2.html" class="dropdown-link">Catégorie 2</a></li>
+                <li><a href="/categories/categorie3.html" class="dropdown-link">Catégorie 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="/produits/" class="nav-link active">Produits</a></li>
+            <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
           </ul>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   </header>
-  <main class="container my-5">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../index.html">Accueil</a></li>
-        <li class="breadcrumb-item"><a href="../categories/categorie1.html">Catégorie 1</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Produit 1</li>
-      </ol>
-    </nav>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <img id="mainImage" src="https://via.placeholder.com/800x600/007bff/ffffff?text=Produit+1" alt="Produit 1" class="img-fluid rounded shadow" />
-        <div class="d-flex gap-2 mt-3">
-          <img class="thumb active rounded" width="100" height="75" src="https://via.placeholder.com/150x100/007bff/ffffff?text=1" alt="vignette 1" onclick="swap(this,'https://via.placeholder.com/800x600/007bff/ffffff?text=Produit+1')" />
-          <img class="thumb rounded" width="100" height="75" src="https://via.placeholder.com/150x100/28a745/ffffff?text=2" alt="vignette 2" onclick="swap(this,'https://via.placeholder.com/800x600/28a745/ffffff?text=Produit+1+Vue+2')" />
-          <img class="thumb rounded" width="100" height="75" src="https://via.placeholder.com/150x100/dc3545/ffffff?text=3" alt="vignette 3" onclick="swap(this,'https://via.placeholder.com/800x600/dc3545/ffffff?text=Produit+1+Vue+3')" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <h1 class="h2">Smartphone Premium - Produit 1</h1>
-        <p class="text-muted">Référence: SP-001</p>
-        <div class="d-flex align-items-center gap-2 mb-2">
-          <span class="badge bg-success badge-status">En stock</span>
-          <span class="text-warning">★★★★★</span>
-          <a href="#avis" class="small">Voir 12 avis</a>
-        </div>
-        <p class="price fw-bold text-primary">599,99 €</p>
-        <p>Un smartphone haut de gamme doté d'un écran OLED, d'un processeur performant et d'un appareil photo de qualité professionnelle.</p>
-        <div class="mb-3">
-          <label class="form-label">Couleur</label>
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline-primary btn-sm">Noir</button>
-            <button class="btn btn-outline-primary btn-sm">Argent</button>
-            <button class="btn btn-outline-primary btn-sm">Bleu</button>
+
+  <!-- Fil d'Ariane -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+        <li class="breadcrumb-item"><a href="/produits/">Produits</a></li>
+        <li class="breadcrumb-item active">Produit 1</li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <div class="container">
+      <article class="product-detail">
+        <div class="product-detail-grid">
+          <!-- Images du produit -->
+          <div class="product-images">
+            <div class="product-main-image">
+              <img src="https://via.placeholder.com/600x400" alt="Produit 1" id="mainImage">
+            </div>
+            <div class="product-thumbnails">
+              <img src="https://via.placeholder.com/150x100" alt="Produit 1 - Vue 1" class="thumbnail active" onclick="changeImage(this)">
+              <img src="https://via.placeholder.com/150x100" alt="Produit 1 - Vue 2" class="thumbnail" onclick="changeImage(this)">
+              <img src="https://via.placeholder.com/150x100" alt="Produit 1 - Vue 3" class="thumbnail" onclick="changeImage(this)">
+            </div>
+          </div>
+
+          <!-- Informations du produit -->
+          <div class="product-details-info">
+            <h1>Produit 1</h1>
+            <p class="product-price">29,99 €</p>
+            <span class="badge badge-success">En stock</span>
+
+            <div class="product-description">
+              <h2>Description</h2>
+              <p>Ceci est une description détaillée du Produit 1. Il possède de nombreuses caractéristiques intéressantes qui le rendent unique et de haute qualité.</p>
+            </div>
+
+            <div class="product-features">
+              <h3>Caractéristiques</h3>
+              <ul>
+                <li>Caractéristique 1: Excellente qualité</li>
+                <li>Caractéristique 2: Design moderne</li>
+                <li>Caractéristique 3: Durable et robuste</li>
+                <li>Caractéristique 4: Garantie 2 ans</li>
+              </ul>
+            </div>
+
+            <div class="product-actions">
+              <div class="quantity-selector">
+                <label for="quantity">Quantité:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+              </div>
+              <button class="btn btn-primary btn-large">Ajouter au panier</button>
+              <button class="btn btn-secondary">Ajouter à la wishlist</button>
+            </div>
           </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">Quantité</label>
-          <input type="number" class="form-control" min="1" value="1" style="max-width:120px" />
-        </div>
-        <div class="d-grid gap-2 d-sm-flex">
-          <button class="btn btn-primary">Ajouter au panier</button>
-          <a class="btn btn-outline-secondary" href="../categories/categorie1.html">Continuer mes achats</a>
-        </div>
-        <hr/>
-        <ul>
-          <li>Écran 6.5" OLED 120Hz</li>
-          <li>128 Go de stockage, 8 Go RAM</li>
-          <li>Appareil photo 50MP + ultra grand-angle</li>
-          <li>Batterie 5000 mAh, charge rapide</li>
-        </ul>
-      </div>
-    </div>
-    <ul class="nav nav-tabs mt-5" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">Description</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab">Spécifications</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#avis" type="button" role="tab">Avis</button>
-      </li>
-    </ul>
-    <div class="tab-content p-3 border border-top-0 rounded-bottom">
-      <div class="tab-pane fade show active" id="desc" role="tabpanel">
-        <p>Ce smartphone offre une expérience fluide et immersive grâce à son écran lumineux et son système optimisé.</p>
-      </div>
-      <div class="tab-pane fade" id="specs" role="tabpanel">
-        <dl class="row">
-          <dt class="col-sm-3">Processeur</dt><dd class="col-sm-9">Octa-core 3.0 GHz</dd>
-          <dt class="col-sm-3">Écran</dt><dd class="col-sm-9">6.5" OLED 2400x1080</dd>
-          <dt class="col-sm-3">Batterie</dt><dd class="col-sm-9">5000 mAh</dd>
-          <dt class="col-sm-3">Connectivité</dt><dd class="col-sm-9">5G, Wi‑Fi 6, BT 5.2, NFC</dd>
-        </dl>
-      </div>
-      <div class="tab-pane fade" id="avis" role="tabpanel">
-        <div class="alert alert-info">Soyez le premier à laisser un avis !</div>
-      </div>
+
+        <!-- Section produits similaires -->
+        <section class="related-products">
+          <h2>Produits similaires</h2>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://via.placeholder.com/300x200" alt="Produit 2">
+              </div>
+              <div class="product-info">
+                <h3>Produit 2</h3>
+                <p class="product-price">39,99 €</p>
+                <a href="/produits/produit2.html" class="btn btn-primary">Voir le produit</a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://via.placeholder.com/300x200" alt="Produit 3">
+              </div>
+              <div class="product-info">
+                <h3>Produit 3</h3>
+                <p class="product-price">49,99 €</p>
+                <a href="/produits/produit3.html" class="btn btn-primary">Voir le produit</a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image">
+                <img src="https://via.placeholder.com/300x200" alt="Produit 4">
+              </div>
+              <div class="product-info">
+                <h3>Produit 4</h3>
+                <p class="product-price">59,99 €</p>
+                <a href="/produits/produit4.html" class="btn btn-primary">Voir le produit</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </article>
     </div>
   </main>
-  <footer class="bg-dark text-white mt-5">
-    <div class="container py-4">
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <h5>À propos</h5>
-          <p>MonSite est votre destination pour les meilleurs produits électroniques.</p>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>À propos</h4>
+          <p>Votre boutique en ligne de confiance</p>
         </div>
-        <div class="col-md-4 mb-3">
-          <h5>Liens rapides</h5>
-          <ul class="list-unstyled">
-            <li><a href="../index.html" class="text-white text-decoration-none">Accueil</a></li>
-            <li><a href="../categories/categorie1.html" class="text-white text-decoration-none">Catégories</a></li>
-            <li><a href="../blog/index.html" class="text-white text-decoration-none">Blog</a></li>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/produits/">Produits</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="col-md-4 mb-3">
-          <h5>Contact</h5>
-          <p>Email: contact@monsite.fr<br/>Tél: +33 1 23 45 67 89</p>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: contact@maboutique.com</p>
+          <p>Tél: +33 1 23 45 67 89</p>
         </div>
       </div>
-      <hr class="bg-white" />
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 MonSite. Tous droits réservés.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ma Boutique. Tous droits réservés.</p>
       </div>
     </div>
   </footer>
+
   <script>
-    function swap(el, url){
-      document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
-      el.classList.add('active');
-      document.getElementById('mainImage').src = url;
+    function changeImage(thumbnail) {
+      // Changer l'image principale
+      document.getElementById('mainImage').src = thumbnail.src.replace('150x100', '600x400');
+      
+      // Gérer la classe active
+      document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+      thumbnail.classList.add('active');
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
