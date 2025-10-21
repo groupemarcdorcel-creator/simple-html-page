@@ -1,346 +1,242 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique E-commerce - Accueil</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        
-        /* Header et Navigation */
-        header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            color: white;
-            padding: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        /* Slider Hero Section */
-        .slider {
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .slider-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .slider h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .slider p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .slider-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-primary {
-            background-color: white;
-            color: #ff6b35;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: white;
-            color: #ff6b35;
-            transform: translateY(-3px);
-        }
-        
-        /* Section Produits */
-        .products-section {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 20px;
-        }
-        
-        .products-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #1e3a5f;
-            margin-bottom: 2.5rem;
-            font-weight: 700;
-        }
-        
-        /* Carrousel Produits */
-        .products-carousel {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #ccc;
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-        }
-        
-        .product-info h3 {
-            font-size: 1.3rem;
-            color: #1e3a5f;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .product-info p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
-            color: #ff6b35;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .btn-buy {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: #ff6b35;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-buy:hover {
-            background-color: #e55a2b;
-            transform: scale(1.03);
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #1e3a5f;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        footer p {
-            font-weight: 300;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .slider h1 {
-                font-size: 2rem;
-            }
-            
-            .slider p {
-                font-size: 1rem;
-            }
-            
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .products-carousel {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boutique E‑commerce - Accueil</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-primary: #1e3a5f;
+      --brand-secondary: #2c5282;
+      --brand-accent: #0d6efd; /* Bootstrap primary */
+      --text: #212529;
+      --muted: #6c757d;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+      color: var(--text);
+      background-color: #f7f8fa;
+      line-height: 1.6;
+    }
+    /* Header */
+    .navbar {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+    }
+    .navbar .nav-link,
+    .navbar .navbar-brand,
+    .navbar .navbar-toggler { color: #fff !important; }
+    .navbar .nav-link.active { font-weight: 600; }
+    .navbar .btn-outline-light:hover { color: var(--brand-primary) !important; }
+
+    /* Hero Carousel */
+    .carousel-caption { background: rgba(0,0,0,0.4); border-radius: .5rem; padding: .75rem 1rem; }
+    .carousel-item img { object-fit: cover; height: 48vh; }
+    @media (min-width: 768px) { .carousel-item img { height: 64vh; } }
+
+    /* Product cards */
+    .product-card .price { font-weight: 700; color: var(--brand-accent); }
+    .product-card .old-price { color: var(--muted); text-decoration: line-through; margin-left: .5rem; }
+
+    /* Footer */
+    footer { background: #0b233a; color: #cfd8e3; }
+    footer a { color: #e2e8f0; }
+    footer a:hover { color: #fff; }
+
+    /* Focus states for accessibility */
+    :focus-visible { outline: 3px solid #66b2ff; outline-offset: 2px; }
+  </style>
 </head>
 <body>
-    <!-- Header avec Navigation -->
-    <header>
-        <nav>
-            <a href="#" class="logo">E-Shop</a>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Promotions</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <!-- Slider Hero -->
-    <section class="slider">
-        <div class="slider-content">
-            <h1>Bienvenue dans notre boutique</h1>
-            <p>Découvrez nos produits de qualité à prix imbattables</p>
-            <div class="slider-buttons">
-                <a href="#" class="btn btn-primary">Voir les produits</a>
-                <a href="#" class="btn btn-secondary">En savoir plus</a>
-            </div>
+  <a class="visually-hidden-focusable" href="#main" id="skip-link">Aller au contenu</a>
+
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navigation principale">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#" aria-label="Accueil Boutique">
+          <span class="d-inline-flex align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a2 2 0 0 0-2 2v1H3.5A1.5 1.5 0 0 0 2 5.5v7A1.5 1.5 0 0 0 3.5 14h9A1.5 1.5 0 0 0 14 12.5v-7A1.5 1.5 0 0 0 12.5 4H10V3a2 2 0 0 0-2-2zm1 3V3a1 1 0 0 0-2 0v1h2z"/></svg>
+            Boutique
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Basculer la navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#" aria-current="page">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#produits">Produits</a></li>
+            <li class="nav-item"><a class="nav-link" href="#offres">Offres</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <form class="d-flex gap-2" role="search" aria-label="Recherche produits">
+            <label for="search" class="visually-hidden">Rechercher</label>
+            <input id="search" class="form-control form-control-sm" type="search" placeholder="Recherche" aria-label="Rechercher un produit">
+            <button class="btn btn-outline-light btn-sm" type="submit">Rechercher</button>
+          </form>
         </div>
-    </section>
-    
-    <!-- Section Produits -->
-    <section class="products-section">
-        <h2>Nos Produits Phares</h2>
-        
-        <div class="products-carousel">
-            <!-- Produit 1 -->
-            <div class="product-card">
-                <div class="product-image">📱</div>
-                <div class="product-info">
-                    <h3>Smartphone Pro</h3>
-                    <p>Le dernier smartphone avec une qualité exceptionnelle</p>
-                    <div class="product-price">599€</div>
-                    <button class="btn-buy">Acheter maintenant</button>
-                </div>
-            </div>
-            
-            <!-- Produit 2 -->
-            <div class="product-card">
-                <div class="product-image">💻</div>
-                <div class="product-info">
-                    <h3>Ordinateur Portable</h3>
-                    <p>Performance et design pour les professionnels</p>
-                    <div class="product-price">899€</div>
-                    <button class="btn-buy">Acheter maintenant</button>
-                </div>
-            </div>
-            
-            <!-- Produit 3 -->
-            <div class="product-card">
-                <div class="product-image">🎧</div>
-                <div class="product-info">
-                    <h3>Casque Audio</h3>
-                    <p>Son immersif et réduction de bruit active</p>
-                    <div class="product-price">199€</div>
-                    <button class="btn-buy">Acheter maintenant</button>
-                </div>
-            </div>
-            
-            <!-- Produit 4 -->
-            <div class="product-card">
-                <div class="product-image">⌚</div>
-                <div class="product-info">
-                    <h3>Montre Connectée</h3>
-                    <p>Suivez votre santé et restez connecté</p>
-                    <div class="product-price">299€</div>
-                    <button class="btn-buy">Acheter maintenant</button>
-                </div>
-            </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero Slider -->
+    <section class="bg-light">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Promotions en vedette">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositive 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Diapositive 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Diapositive 3"></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop" class="d-block w-100" alt="Collection de chaussures tendance" />
+            <div class="carousel-caption text-start">
+              <h2 class="h4 h1-md">Nouvelles Collections</h2>
+              <p class="mb-2">Style et confort pour votre quotidien.</p>
+              <a href="#produits" class="btn btn-primary btn-sm">Découvrir</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop" class="d-block w-100" alt="Accessoires élégants sur table" />
+            <div class="carousel-caption">
+              <h2 class="h4">Accessoires essentiels</h2>
+              <p class="mb-2">Associez l'utile à l'agréable.</p>
+              <a href="#offres" class="btn btn-outline-light btn-sm">Voir les offres</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop" class="d-block w-100" alt="Tenues minimalistes sur fond clair" />
+            <div class="carousel-caption text-end">
+              <h2 class="h4">Minimal et pro</h2>
+              <p class="mb-2">Des pièces intemporelles et durables.</p>
+              <a href="#produits" class="btn btn-primary btn-sm">Acheter</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Diapositive précédente">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Diapositive suivante">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Suivant</span>
+        </button>
+      </div>
     </section>
-    
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 E-Shop - Tous droits réservés</p>
-    </footer>
-</body>
-</html>
+
+    <!-- Avantages -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-3 g-md-4 text-center">
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2" aria-hidden="true">🚚</div>
+                <h3 class="h6 mt-2">Livraison rapide</h3>
+                <p class="text-muted small mb-0">Partout en France métropolitaine.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2" aria-hidden="true">↩️</div>
+                <h3 class="h6 mt-2">Retours faciles</h3>
+                <p class="text-muted small mb-0">30 jours pour changer d'avis.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2" aria-hidden="true">🔒</div>
+                <h3 class="h6 mt-2">Paiement sécurisé</h3>
+                <p class="text-muted small mb-0">Par CB, PayPal, Apple Pay.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2" aria-hidden="true">💬</div>
+                <h3 class="h6 mt-2">Support 7j/7</h3>
+                <p class="text-muted small mb-0">Une équipe à votre écoute.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produits en vedette -->
+    <section id="produits" class="py-4 py-md-5 bg-white">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2 mb-3 mb-md-4">
+          <div>
+            <h2 class="h4 h3-md mb-1">Produits en vedette</h2>
+            <p class="text-muted small mb-0">Sélection soignée, disponible en stock.</p>
+          </div>
+          <a href="#" class="btn btn-outline-primary btn-sm">Tout voir</a>
+        </div>
+
+        <!-- Carousel produits -->
+        <div id="productsCarousel" class="carousel slide" data-bs-interval="7000" data-bs-ride="carousel" aria-label="Carrousel de produits">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row g-3 g-md-4">
+                <!-- Card 1 -->
+                <div class="col-6 col-md-3">
+                  <article class="card product-card h-100" aria-label="Sneakers Alpha">
+                    <img class="card-img-top" src="https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=800&auto=format&fit=crop" alt="Sneakers blanches modèles Alpha" />
+                    <div class="card-body d-flex flex-column">
+                      <h3 class="h6">Sneakers Alpha</h3>
+                      <p class="mb-2"><span class="price">69,90 €</span> <span class="old-price">89,90 €</span></p>
+                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Sneakers Alpha au panier">Ajouter au panier</button>
+                    </div>
+                  </article>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-6 col-md-3">
+                  <article class="card product-card h-100" aria-label="Sac Minimal">
+                    <img class="card-img-top" src="https://images.unsplash.com/photo-1520975922236-20cc7accb51b?q=80&w=800&auto=format&fit=crop" alt="Sac à dos minimaliste noir" />
+                    <div class="card-body d-flex flex-column">
+                      <h3 class="h6">Sac Minimal</h3>
+                      <p class="mb-2"><span class="price">49,90 €</span></p>
+                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Sac Minimal au panier">Ajouter au panier</button>
+                    </div>
+                  </article>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-6 col-md-3 d-none d-md-block">
+                  <article class="card product-card h-100" aria-label="Montre Acier">
+                    <img class="card-img-top" src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?q=80&w=800&auto=format&fit=crop" alt="Montre en acier sur fond sombre" />
+                    <div class="card-body d-flex flex-column">
+                      <h3 class="h6">Montre Acier</h3>
+                      <p class="mb-2"><span class="price">129,00 €</span></p>
+                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Montre Acier au panier">Ajouter au panier</button>
+                    </div>
+                  </article>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-6 col-md-3 d-none d-md-block">
+                  <article class="card product-card h-100" aria-label="Casquette Navy">
+                    <img class="card-img-top" src="https://images.unsplash.com/photo-1543872084-c7bd3822856d?q=80&w=800&auto=format&fit=crop" alt="Casquette bleue posée sur table" />
+                    <div class="card-body d-flex flex-column">
+                      <h3 class="h6">Casquette Navy</h3>
+                      <p class="mb-2"><span class="price">19,90 €</span></p>
+                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Casquette Navy au panier">Ajouter au panier</button>
+                    </div>
+                  </article>
+               
