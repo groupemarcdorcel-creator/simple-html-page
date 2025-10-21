@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégorie 1 - Électronique | Simple Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            transition: transform 0.2s;
+            cursor: pointer;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            height: 200px;
+            object-fit: cover;
+            background-color: #f8f9fa;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .price {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Simple Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Catégories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="categorie1.html">Électronique</a></li>
+                            <li><a class="dropdown-item" href="categorie2.html">Vêtements</a></li>
+                            <li><a class="dropdown-item" href="categorie3.html">Maison & Jardin</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../panier.html">🛒 Panier (0)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../login.html">Connexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="../index.html">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Électronique</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Page Header -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h1 class="display-4 text-center mb-3">Électronique</h1>
+                <p class="lead text-center text-muted">Découvrez notre sélection de produits électroniques de qualité</p>
+                <hr class="my-4">
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100" onclick="window.location.href='../produits/smartphone.html'">
+                    <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Smartphone" class="card-img-top product-image" alt="Smartphone">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphone Pro Max</h5>
+                        <p class="card-text">Smartphone dernière génération avec écran OLED 6.7" et triple caméra.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price">899,99 €</span>
+                            <small class="text-muted">⭐⭐⭐⭐⭐ (128 avis)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100" onclick="window.location.href='../produits/laptop.html'">
+                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Laptop" class="card-img-top product-image" alt="Laptop">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop UltraBook</h5>
+                        <p class="card-text">Ordinateur portable ultra-fin avec processeur Intel i7 et 16GB RAM.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price">1 299,99 €</span>
+                            <small class="text-muted">⭐⭐⭐⭐⭐ (89 avis)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100" onclick="window.location.href='../produits/casque.html'">
+                    <img src="https://via.placeholder.com/300x200/dc3545/ffffff?text=Casque" class="card-img-top product-image" alt="Casque">
+                    <div class="card-body">
+                        <h5 class="card-title">Casque Audio Bluetooth</h5>
+                        <p class="card-text">Casque sans fil avec réduction de bruit active et autonomie 30h.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price">249,99 €</span>
+                            <small class="text-muted">⭐⭐⭐⭐☆ (67 avis)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100" onclick="window.location.href='../produits/tablette.html'">
+                    <img src="https://via.placeholder.com/300x200/6f42c1/ffffff?text=Tablette" class="card-img-top product-image" alt="Tablette">
+                    <div class="card-body">
+                        <h5 class="card-title">Tablette Pro 12"</h5>
+                        <p class="card-text">Tablette professionnelle avec écran haute résolution et stylet inclus.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price">699,99 €</span>
+                            <small class="text-muted">⭐⭐⭐⭐⭐ (145 avis)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100" onclick="window.location.href='../produits/montre.html'">
+                    <img src="https://via.placeholder.com/300x200/fd7e14/ffffff?text=Smartwatch" class="card-img-top product-image" alt="Smartwatch">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartwatch Sport</h5>
+                        <p class="card-text">Montre connectée étanche avec GPS et suivi santé complet.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price">399,99 €</span>
+                            <small class="text-muted">⭐⭐⭐⭐☆ (203 avis)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100" onclick="window.location.href='../produits/enceinte.html'">
+                    <img src="https://via.placeholder.com/300x200/20c997/ffffff?text=Enceinte" class="card-img-top product-image" alt="Enceinte">
+                    <div class="card-body">
+                        <h5 class="card-title">Enceinte Bluetooth Portable</h5>
+                        <p class="card-text">Enceinte portable résistante à l'eau avec son stéréo puissant.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price">149,99 €</span>
+                            <small class="text-muted">⭐⭐⭐⭐☆ (94 avis)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Simple Shop</h5>
+                    <p class="text-muted">Votre boutique en ligne de confiance pour tous vos besoins.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-muted text-decoration-none">Accueil</a></li>
+                        <li><a href="../about.html" class="text-muted text-decoration-none">À propos</a></li>
+                        <li><a href="../contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="../mentions-legales.html" class="text-muted text-decoration-none">Mentions légales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p class="text-muted">
+                        📧 contact@simpleshop.com<br>
+                        📞 01 23 45 67 89<br>
+                        📍 123 Rue de la Paix, 75001 Paris
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0 text-muted">&copy; 2024 Simple Shop. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
