@@ -1,242 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Boutique E‑commerce - Accueil</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --brand-primary: #1e3a5f;
-      --brand-secondary: #2c5282;
-      --brand-accent: #0d6efd; /* Bootstrap primary */
-      --text: #212529;
-      --muted: #6c757d;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-      color: var(--text);
-      background-color: #f7f8fa;
-      line-height: 1.6;
-    }
-    /* Header */
-    .navbar {
-      background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
-    }
-    .navbar .nav-link,
-    .navbar .navbar-brand,
-    .navbar .navbar-toggler { color: #fff !important; }
-    .navbar .nav-link.active { font-weight: 600; }
-    .navbar .btn-outline-light:hover { color: var(--brand-primary) !important; }
-
-    /* Hero Carousel */
-    .carousel-caption { background: rgba(0,0,0,0.4); border-radius: .5rem; padding: .75rem 1rem; }
-    .carousel-item img { object-fit: cover; height: 48vh; }
-    @media (min-width: 768px) { .carousel-item img { height: 64vh; } }
-
-    /* Product cards */
-    .product-card .price { font-weight: 700; color: var(--brand-accent); }
-    .product-card .old-price { color: var(--muted); text-decoration: line-through; margin-left: .5rem; }
-
-    /* Footer */
-    footer { background: #0b233a; color: #cfd8e3; }
-    footer a { color: #e2e8f0; }
-    footer a:hover { color: #fff; }
-
-    /* Focus states for accessibility */
-    :focus-visible { outline: 3px solid #66b2ff; outline-offset: 2px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutique E-commerce - Accueil</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="visually-hidden-focusable" href="#main" id="skip-link">Aller au contenu</a>
-
-  <!-- Header / Navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navigation principale">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#" aria-label="Accueil Boutique">
-          <span class="d-inline-flex align-items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a2 2 0 0 0-2 2v1H3.5A1.5 1.5 0 0 0 2 5.5v7A1.5 1.5 0 0 0 3.5 14h9A1.5 1.5 0 0 0 14 12.5v-7A1.5 1.5 0 0 0 12.5 4H10V3a2 2 0 0 0-2-2zm1 3V3a1 1 0 0 0-2 0v1h2z"/></svg>
-            Boutique
-          </span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Basculer la navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#" aria-current="page">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="#produits">Produits</a></li>
-            <li class="nav-item"><a class="nav-link" href="#offres">Offres</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+  <!-- Header avec navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Ma Boutique</a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">Catégories</a>
+              <ul class="dropdown-menu">
+                <li><a href="/categories/categorie1.html" class="dropdown-link">Catégorie 1</a></li>
+                <li><a href="/categories/categorie2.html" class="dropdown-link">Catégorie 2</a></li>
+                <li><a href="/categories/categorie3.html" class="dropdown-link">Catégorie 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="/produits/" class="nav-link">Produits</a></li>
+            <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
           </ul>
-          <form class="d-flex gap-2" role="search" aria-label="Recherche produits">
-            <label for="search" class="visually-hidden">Rechercher</label>
-            <input id="search" class="form-control form-control-sm" type="search" placeholder="Recherche" aria-label="Rechercher un produit">
-            <button class="btn btn-outline-light btn-sm" type="submit">Rechercher</button>
-          </form>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="main">
-    <!-- Hero Slider -->
-    <section class="bg-light">
-      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Promotions en vedette">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositive 1"></button>
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Diapositive 2"></button>
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Diapositive 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop" class="d-block w-100" alt="Collection de chaussures tendance" />
-            <div class="carousel-caption text-start">
-              <h2 class="h4 h1-md">Nouvelles Collections</h2>
-              <p class="mb-2">Style et confort pour votre quotidien.</p>
-              <a href="#produits" class="btn btn-primary btn-sm">Découvrir</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop" class="d-block w-100" alt="Accessoires élégants sur table" />
-            <div class="carousel-caption">
-              <h2 class="h4">Accessoires essentiels</h2>
-              <p class="mb-2">Associez l'utile à l'agréable.</p>
-              <a href="#offres" class="btn btn-outline-light btn-sm">Voir les offres</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop" class="d-block w-100" alt="Tenues minimalistes sur fond clair" />
-            <div class="carousel-caption text-end">
-              <h2 class="h4">Minimal et pro</h2>
-              <p class="mb-2">Des pièces intemporelles et durables.</p>
-              <a href="#produits" class="btn btn-primary btn-sm">Acheter</a>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Diapositive précédente">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Précédent</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Diapositive suivante">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Suivant</span>
-        </button>
-      </div>
-    </section>
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <div class="container">
+      <section class="hero">
+        <h1>Bienvenue dans notre boutique</h1>
+        <p class="lead">Découvrez notre sélection de produits exceptionnels</p>
+        <a href="/produits/" class="btn btn-primary">Voir nos produits</a>
+      </section>
 
-    <!-- Avantages -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row g-3 g-md-4 text-center">
-          <div class="col-6 col-md-3">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body">
-                <div class="fs-2" aria-hidden="true">🚚</div>
-                <h3 class="h6 mt-2">Livraison rapide</h3>
-                <p class="text-muted small mb-0">Partout en France métropolitaine.</p>
-              </div>
-            </div>
+      <section class="featured-categories">
+        <h2>Nos catégories</h2>
+        <div class="category-grid">
+          <div class="category-card">
+            <h3>Catégorie 1</h3>
+            <p>Description de la catégorie 1</p>
+            <a href="/categories/categorie1.html" class="btn btn-secondary">Découvrir</a>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body">
-                <div class="fs-2" aria-hidden="true">↩️</div>
-                <h3 class="h6 mt-2">Retours faciles</h3>
-                <p class="text-muted small mb-0">30 jours pour changer d'avis.</p>
-              </div>
-            </div>
+          <div class="category-card">
+            <h3>Catégorie 2</h3>
+            <p>Description de la catégorie 2</p>
+            <a href="/categories/categorie2.html" class="btn btn-secondary">Découvrir</a>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body">
-                <div class="fs-2" aria-hidden="true">🔒</div>
-                <h3 class="h6 mt-2">Paiement sécurisé</h3>
-                <p class="text-muted small mb-0">Par CB, PayPal, Apple Pay.</p>
-              </div>
-            </div>
+          <div class="category-card">
+            <h3>Catégorie 3</h3>
+            <p>Description de la catégorie 3</p>
+            <a href="/categories/categorie3.html" class="btn btn-secondary">Découvrir</a>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body">
-                <div class="fs-2" aria-hidden="true">💬</div>
-                <h3 class="h6 mt-2">Support 7j/7</h3>
-                <p class="text-muted small mb-0">Une équipe à votre écoute.</p>
-              </div>
-            </div>
-          </div>
+        </div>
+      </section>
+
+      <section class="latest-blog">
+        <h2>Derniers articles du blog</h2>
+        <div class="blog-preview">
+          <article class="blog-card">
+            <h3>Article récent</h3>
+            <p>Découvrez nos dernières actualités...</p>
+            <a href="/blog/article1.html" class="btn btn-link">Lire la suite</a>
+          </article>
+        </div>
+        <a href="/blog/" class="btn btn-secondary">Voir tous les articles</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>À propos</h4>
+          <p>Votre boutique en ligne de confiance</p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/produits/">Produits</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: contact@maboutique.com</p>
+          <p>Tél: +33 1 23 45 67 89</p>
         </div>
       </div>
-    </section>
-
-    <!-- Produits en vedette -->
-    <section id="produits" class="py-4 py-md-5 bg-white">
-      <div class="container">
-        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2 mb-3 mb-md-4">
-          <div>
-            <h2 class="h4 h3-md mb-1">Produits en vedette</h2>
-            <p class="text-muted small mb-0">Sélection soignée, disponible en stock.</p>
-          </div>
-          <a href="#" class="btn btn-outline-primary btn-sm">Tout voir</a>
-        </div>
-
-        <!-- Carousel produits -->
-        <div id="productsCarousel" class="carousel slide" data-bs-interval="7000" data-bs-ride="carousel" aria-label="Carrousel de produits">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row g-3 g-md-4">
-                <!-- Card 1 -->
-                <div class="col-6 col-md-3">
-                  <article class="card product-card h-100" aria-label="Sneakers Alpha">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=800&auto=format&fit=crop" alt="Sneakers blanches modèles Alpha" />
-                    <div class="card-body d-flex flex-column">
-                      <h3 class="h6">Sneakers Alpha</h3>
-                      <p class="mb-2"><span class="price">69,90 €</span> <span class="old-price">89,90 €</span></p>
-                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Sneakers Alpha au panier">Ajouter au panier</button>
-                    </div>
-                  </article>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-6 col-md-3">
-                  <article class="card product-card h-100" aria-label="Sac Minimal">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1520975922236-20cc7accb51b?q=80&w=800&auto=format&fit=crop" alt="Sac à dos minimaliste noir" />
-                    <div class="card-body d-flex flex-column">
-                      <h3 class="h6">Sac Minimal</h3>
-                      <p class="mb-2"><span class="price">49,90 €</span></p>
-                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Sac Minimal au panier">Ajouter au panier</button>
-                    </div>
-                  </article>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-6 col-md-3 d-none d-md-block">
-                  <article class="card product-card h-100" aria-label="Montre Acier">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?q=80&w=800&auto=format&fit=crop" alt="Montre en acier sur fond sombre" />
-                    <div class="card-body d-flex flex-column">
-                      <h3 class="h6">Montre Acier</h3>
-                      <p class="mb-2"><span class="price">129,00 €</span></p>
-                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Montre Acier au panier">Ajouter au panier</button>
-                    </div>
-                  </article>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-6 col-md-3 d-none d-md-block">
-                  <article class="card product-card h-100" aria-label="Casquette Navy">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1543872084-c7bd3822856d?q=80&w=800&auto=format&fit=crop" alt="Casquette bleue posée sur table" />
-                    <div class="card-body d-flex flex-column">
-                      <h3 class="h6">Casquette Navy</h3>
-                      <p class="mb-2"><span class="price">19,90 €</span></p>
-                      <button class="btn btn-primary btn-sm mt-auto" type="button" aria-label="Ajouter Casquette Navy au panier">Ajouter au panier</button>
-                    </div>
-                  </article>
-               
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ma Boutique. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
