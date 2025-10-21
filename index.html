@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World!</title>
+    <title>Boutique E-commerce - Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,252 +15,332 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
         }
         
         /* Header et Navigation */
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
         }
         
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-        }
-        
-        nav ul li {
-            margin: 0 30px;
+            gap: 2rem;
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
         
         nav ul li a:hover {
-            color: #ff6b6b;
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
         
-        /* Slider */
+        /* Slider Hero Section */
         .slider {
-            position: relative;
-            max-width: 1200px;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        
-        .slide {
-            min-width: 100%;
-            height: 400px;
-        }
-        
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .slider-nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .slider-btn {
-            background: #333;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
             color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .slider-btn:hover {
-            background: #ff6b6b;
-        }
-        
-        /* Carrousel Produits */
-        .products {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        
-        .products h2 {
+            padding: 4rem 2rem;
             text-align: center;
-            margin-bottom: 30px;
-            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .carousel {
+        .slider-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .slider h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .slider p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .slider-buttons {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
         
-        .product {
-            flex: 1;
-            min-width: 250px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: white;
+            color: #ff6b35;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: #ff6b35;
+            transform: translateY(-3px);
+        }
+        
+        /* Section Produits */
+        .products-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+        
+        .products-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3a5f;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+        }
+        
+        /* Carrousel Produits */
+        .products-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
             overflow: hidden;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
-        .product:hover {
-            transform: translateY(-5px);
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        .product img {
+        .product-image {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 250px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #ccc;
         }
         
         .product-info {
-            padding: 20px;
-            text-align: center;
+            padding: 1.5rem;
         }
         
         .product-info h3 {
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
-        .product-info .price {
-            color: #ff6b6b;
-            font-size: 1.2rem;
-            font-weight: bold;
+        .product-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
         
+        .product-price {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-buy {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #ff6b35;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-buy:hover {
+            background-color: #e55a2b;
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            font-weight: 300;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
+            .slider h1 {
+                font-size: 2rem;
+            }
+            
+            .slider p {
+                font-size: 1rem;
+            }
+            
             nav ul {
-                flex-direction: column;
-                text-align: center;
+                gap: 1rem;
             }
             
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .carousel {
-                flex-direction: column;
-                align-items: center;
+            .products-carousel {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header avec Navigation -->
     <header>
         <nav>
+            <a href="#" class="logo">E-Shop</a>
             <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#produits">Produits</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#">Promotions</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-    <main>
-        <!-- Slider -->
-        <div class="slider">
-            <div class="slides" id="slides">
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x400/ff6b6b/ffffff?text=Slide+1" alt="Slide 1">
-                </div>
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x400/4ecdc4/ffffff?text=Slide+2" alt="Slide 2">
-                </div>
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x400/45b7d1/ffffff?text=Slide+3" alt="Slide 3">
-                </div>
-            </div>
-            <div class="slider-nav">
-                <button class="slider-btn" onclick="changeSlide(-1)">❮ Précédent</button>
-                <button class="slider-btn" onclick="changeSlide(1)">Suivant ❯</button>
+    
+    <!-- Slider Hero -->
+    <section class="slider">
+        <div class="slider-content">
+            <h1>Bienvenue dans notre boutique</h1>
+            <p>Découvrez nos produits de qualité à prix imbattables</p>
+            <div class="slider-buttons">
+                <a href="#" class="btn btn-primary">Voir les produits</a>
+                <a href="#" class="btn btn-secondary">En savoir plus</a>
             </div>
         </div>
-
-        <!-- Carrousel Produits -->
-        <section class="products">
-            <h2>Nos Produits</h2>
-            <div class="carousel">
-                <div class="product">
-                    <img src="https://via.placeholder.com/250x200/ff9f43/ffffff?text=Produit+1" alt="Produit 1">
-                    <div class="product-info">
-                        <h3>Produit Premium</h3>
-                        <div class="price">29,99 €</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/250x200/6c5ce7/ffffff?text=Produit+2" alt="Produit 2">
-                    <div class="product-info">
-                        <h3>Produit Classique</h3>
-                        <div class="price">19,99 €</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/250x200/fd79a8/ffffff?text=Produit+3" alt="Produit 3">
-                    <div class="product-info">
-                        <h3>Produit Deluxe</h3>
-                        <div class="price">39,99 €</div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/250x200/00b894/ffffff?text=Produit+4" alt="Produit 4">
-                    <div class="product-info">
-                        <h3>Produit Eco</h3>
-                        <div class="price">24,99 €</div>
-                    </div>
+    </section>
+    
+    <!-- Section Produits -->
+    <section class="products-section">
+        <h2>Nos Produits Phares</h2>
+        
+        <div class="products-carousel">
+            <!-- Produit 1 -->
+            <div class="product-card">
+                <div class="product-image">📱</div>
+                <div class="product-info">
+                    <h3>Smartphone Pro</h3>
+                    <p>Le dernier smartphone avec une qualité exceptionnelle</p>
+                    <div class="product-price">599€</div>
+                    <button class="btn-buy">Acheter maintenant</button>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.getElementById('slides');
-        const totalSlides = 3;
-
-        function changeSlide(direction) {
-            currentSlide += direction;
             
-            if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            }
+            <!-- Produit 2 -->
+            <div class="product-card">
+                <div class="product-image">💻</div>
+                <div class="product-info">
+                    <h3>Ordinateur Portable</h3>
+                    <p>Performance et design pour les professionnels</p>
+                    <div class="product-price">899€</div>
+                    <button class="btn-buy">Acheter maintenant</button>
+                </div>
+            </div>
             
-            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        // Auto-slide every 5 seconds
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
-    </script>
+            <!-- Produit 3 -->
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <div class="product-info">
+                    <h3>Casque Audio</h3>
+                    <p>Son immersif et réduction de bruit active</p>
+                    <div class="product-price">199€</div>
+                    <button class="btn-buy">Acheter maintenant</button>
+                </div>
+            </div>
+            
+            <!-- Produit 4 -->
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <div class="product-info">
+                    <h3>Montre Connectée</h3>
+                    <p>Suivez votre santé et restez connecté</p>
+                    <div class="product-price">299€</div>
+                    <button class="btn-buy">Acheter maintenant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 E-Shop - Tous droits réservés</p>
+    </footer>
 </body>
 </html>
